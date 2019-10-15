@@ -8,3 +8,22 @@ module.exports.ls = () => {
     console.log(filesToString);
   });
 };
+
+module.exports.touch = () => {
+  fs.writeFile('newfile.txt', 'Add some text!', (err) => {
+    if (err) {
+      return console.error(err);
+    }
+    console.log("File saved");
+  });
+};
+
+
+module.exports.mkdir = () => {
+  fs.mkdir('./newfolder', (err) => {
+    if (err) {
+      return console.error(err);
+    }
+    console.log("Folder created");
+  });
+};
